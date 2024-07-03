@@ -3,7 +3,13 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-const PaginationControl = ({ hasNextPage, hasPrevPage, page, per_page }) => {
+const PaginationControl = ({
+  hasNextPage,
+  hasPrevPage,
+  page,
+  per_page,
+  totalPosts,
+}) => {
   const router = useRouter();
 
   return (
@@ -18,7 +24,7 @@ const PaginationControl = ({ hasNextPage, hasPrevPage, page, per_page }) => {
         Previous Page
       </button>
       <div className="text-nowrap">
-        {page} / {Math.ceil(100 / Number(per_page))}
+        {page} / {Math.ceil(totalPosts / Number(per_page))}
       </div>
       <button
         className="btn btn-dark btn-sm"

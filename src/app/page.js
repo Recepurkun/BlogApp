@@ -2,26 +2,34 @@ import Footer from "@/components/Footer/Footer";
 import BlogCard from "@/components/BlogCard/BlogCard";
 import PaginationControl from "@/components/PaginationControl";
 import { getPosts } from "@/service/api";
+import notFound from "./blog/[[...id]]/not-found"
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export default async function Home({ searchParams }) {
   const page = searchParams.page ?? '1'; //page degeri var mi url'de? yoksa page degeri 1 olacak cunku acilis sayfasi ilk sayfa olacak
-  const per_page = searchParams.per_page ?? '10'; //per_page sayfada gosterilecek toplam post sayisi
+  const per_page = searchParams.per_page ?? '5'; //per_page sayfada gosterilecek toplam post sayisi
 
   await delay(1500);
-  const data = await getPosts();
+  let data = await getPosts();
+  data = data.posts
   const totalPosts = data.length; //toplam post sayisi -> 100 tane post var
 
   const start = (Number(page) - 1) * Number(per_page); //ekranda gostermeye kacinci postla baslayacak | start=10
   const end = start + Number(per_page); //ekranda gostermeye kacinci postta bitirecek | end=20
+
+  // Eğer geçersiz bir sayfa numarası istenmişse, 404 sayfasına yönlendirin
+  if (start >= totalPosts) {
+    return notFound();
+  }
+
   const entries = data.slice(start, end); //ekranda toplamda kac tane post gosterilecek. | entries = 10'dan 20'ye kadar olan postlari ekranda gosterecek
 
   return (
     <div className="container">
       <div className="row">
         {entries.map((post) => (
-          <BlogCard key={post.id} post={post} />
+          <BlogCard key={post.id} {...post} />
         ))}
       </div>
       <hr className="hr" />
@@ -30,6 +38,7 @@ export default async function Home({ searchParams }) {
         hasPrevPage={start > 0} //bir onceki sayfa var mi? yoksa geri butonunu devre disi birak
         page={page}
         per_page={per_page}
+        totalPosts={totalPosts}
       />
       <Footer />
     </div>

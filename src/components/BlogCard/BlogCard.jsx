@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "./styled.module.css";
 
-const BlogCard = ({ post }) => {
-  const { id, title, body } = post;
+const BlogCard = ({ id, title, body, reactions, views }) => {
   return (
     <div>
       <hr className="hr" />
@@ -18,8 +17,13 @@ const BlogCard = ({ post }) => {
           />
         </div>
         <div className={styled.cardBody}>
-          <h3>
+          <h3 className="d-flex flex-wrap justify-content-between me-2">
             {id} - {title}
+            <i className="mt-2 mt-md-0">
+              <small>
+                👍{reactions.likes} 👎{reactions.dislikes}
+              </small>
+            </i>
           </h3>
           <p>{body}</p>
         </div>

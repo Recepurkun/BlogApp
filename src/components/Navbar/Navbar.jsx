@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="d-flex align-items-baseline">
-        <Link href="/?page=1&per_page=10">
+        <Link href="/?page=1&per_page=5">
           <h2
             className="text-uppercase fw-bolder navbar-with-border"
             style={{ color: "#4CAF50" }}

@@ -10,7 +10,7 @@ const NotFound = () => {
       <div className={`${styled.notFoundContainer}`}>
         <Image src={error} width={400} height={400} alt="Blog Card" />
         <h1 className={styled.notFound}>Blog doesn't exist</h1>
-        <Link href="/" className="btn btn-dark mt-3 btn-lg">
+        <Link href="/?page=1&per_page=5" className="btn btn-dark mt-3 btn-lg">
           Home
         </Link>
       </div>

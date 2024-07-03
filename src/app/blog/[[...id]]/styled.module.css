@@ -3,12 +3,13 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100%;
 }
 
 .cardImage {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 400px;
 }
 
 .cardImage img {
@@ -23,13 +24,13 @@
 
 .blogTitle {
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .blogBody {
   font-weight: 400;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .notFound {
@@ -56,4 +57,40 @@
   font-weight: 300;
   color: white;
   box-shadow: inset 0 0 0 2000px rgba(34, 14, 92, 0.5);
+}
+
+.title {
+  font-size: 48px;
+  margin-top: 8px;
+}
+
+.tags {
+  margin: 10px 0;
+}
+
+.tags button {
+  margin-right: 5px;
+  padding: 10px 20px;
+  font-size: 0.8em;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  background-color: #f2f2f2;
+  color: #000;
+  &:hover {
+    color: #f2f2f2;
+    background-color: #000;
+    border: 1px solid #f2f2f2;
+  }
+}
+
+.reactions {
+  cursor: pointer;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.reactions:hover {
+  transform: translateY(-5px);
 }
