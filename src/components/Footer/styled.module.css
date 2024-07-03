@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.footer h4 {
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.footer h4:hover {
+  transform: scale(1.05);
+}

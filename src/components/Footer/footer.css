@@ -1,0 +1,27 @@
+.footer-with-border {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-border {
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.text-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.footer-with-border:hover .footer-border {
+  width: 100%;
+}
+
+.footer-with-border:hover .text-border-alt {
+  width: 100%;
+}

@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.cardImage {
+  flex-shrink: 0;
+  position: relative;
+  height: 96px;
+  width: 96px;
+}
+
+.card img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cardBody {
+  margin-left: 16px;
+}
+
+.cardBody p {
+  margin-top: 4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+.cardBody h3 {
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+.card {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}

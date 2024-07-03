@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.navbar-with-border {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.navbar-border {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #4caf50;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.headerText-alt {
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #ff6464 0%, #ffbf59 50%, #47c9ff 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.navbar-with-border:hover .navbar-border {
+  width: 100%;
+}
+
+.navbar-with-border:hover .headerText-alt {
+  width: 250%;
+}
+
+@media screen and (max-width: 321px) {
+  .navbar-with-border:hover .headerText-alt {
+    width: 300%;
+  }
+}
