@@ -7,7 +7,7 @@ const BlogCard = ({ id, title, body, reactions, views }) => {
   return (
     <div>
       <hr className="hr" />
-      <Link href={`/blog/${id}`} className={styled.card}>
+      <Link href={`/blog/${id}`} className={`${styled.card} my-2 m-md-1`}>
         <div className={styled.cardImage}>
           <Image
             src={`https://picsum.photos/200/300?random=${id}`}
@@ -25,7 +25,7 @@ const BlogCard = ({ id, title, body, reactions, views }) => {
               </small>
             </i>
           </h3>
-          <p>{body}</p>
+          <p className="m-0">{body}</p>
         </div>
       </Link>
     </div>
